@@ -110,16 +110,14 @@ class ActionEngine:
             return "Robot stopped."
     
     def _execute_high_level_action(self, action_name):
-        """Execute a high-level goal-oriented action."""
+        """Execute a goal-oriented action."""
         if action_name == "move_to_the_target":
-            # This would involve object detection and path planning
-            # Simplified implementation for demonstration
             self.robot_controller.navigate_to_target()
             return "Robot is navigating to the identified target."
         
         elif action_name == "explore":
             # Look around to gather more visual information
-            self.robot_controller.rotate(360, speed=20)  # Slow 360-degree scan
+            self.robot_controller.rotate(360, speed=0.2)  # Slow 360-degree scan
             return "Robot performed a full scan of the surroundings."
         
         elif action_name == "backtrack":
